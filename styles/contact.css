@@ -54,7 +54,7 @@
 .section-info .container h1,
 .container-attention h1{
   font-weight: 400;
-  font-size: clamp(12px, 1vw, 16px);/*---------------*/
+  font-size: clamp(9px, 1vw, 16px);/*---------------*/
 }
 .section-info .container-info i,
 .section-info .container-attention i{
@@ -975,4 +975,10 @@ footer .contact-icons .icons-networks i{
   
 }
 
-
+/*------   FOOTER RESPONSIVE COPY   -----*/
+@media (max-width: 415px){
+  .section-copy{
+    padding: .5rem 0;
+    text-align: center;
+  }
+}
