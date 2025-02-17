@@ -156,7 +156,7 @@ header .top-nav{
 .section-banner {
   width: 100%;
   min-height: 50vh;
-  background-image: url('/imagenes/banner-us3.jpg');
+  background-image: url('../imagenes/banner-us.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

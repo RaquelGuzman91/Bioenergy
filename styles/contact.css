@@ -156,7 +156,7 @@ header .top-nav{
 .section-banner {
   width: 100%;
   min-height: 50vh;
-  background-image: url('/imagenes/proteger-paneles-solares.png');
+  background-image: url('../imagenes/proteger-paneles-solares.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;  
