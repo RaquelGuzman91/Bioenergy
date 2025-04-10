@@ -27,6 +27,10 @@
 body{
   overflow-x: hidden;
 }
+body.hidden {
+  visibility: hidden; /* Oculta el contenido de la página */
+}
+
 
  .section-info{
   width: 100%;

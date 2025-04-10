@@ -22,6 +22,7 @@
   margin: 0;
   box-sizing: border-box;
   padding: 0;
+  color: rgb(216, 235, 252);
  }
  
 body{
@@ -188,7 +189,7 @@ header .top-nav{
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 4rem 0px;  
+    padding: 4rem 0px;
   }
   
   .section-main {
@@ -1026,3 +1027,6 @@ footer .contact-icons .icons-networks i{
     padding: 1rem 0px;
   }
 }
+
+
+

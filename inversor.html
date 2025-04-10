@@ -104,130 +104,165 @@
         <div class="card-enlaces">
             <a href="products.html">volver</a> <h2>categoria de inversores</h2>
         </div>
+        
+
+        <!--------       ---------->
+        <script>
+            function guardarProducto(idProducto) {
+            localStorage.setItem('productoSeleccionado', idProducto); // Guarda el ID del producto.
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const id = localStorage.getItem('productoSeleccionado'); // Obtiene el ID guardado.
+            if (id) {
+                const elemento = document.getElementById(id); // Busca el elemento con el ID.
+                if (elemento) {
+                    // Opción 1: Scroll en toda la página
+                    const rect = elemento.getBoundingClientRect();
+                    const offsetTop = rect.top + window.pageYOffset;    
+                    window.scrollTo(0, offsetTop); // Desplazarse al elemento.
+
+                    // Opción 2: Scroll en un contenedor específico
+                    const contenedor = document.querySelector('.contenedor-scrollable');
+                    if (contenedor) {
+                        contenedor.scrollTop = elemento.offsetTop; // Desplaza dentro del contenedor.
+                    }
+
+                    // Estilo para destacar el elemento (opcional)
+                    elemento.style.backgroundColor = 'rgb(216, 235, 252)'; // Fondo celeste.
+                }
+            }
+            localStorage.removeItem('productoSeleccionado'); // Limpia el ID después de usarlo.
+        });
+
+           
+    </script>
+        <!-------------------     --------------->
         <!-- ------->
+
         <div class="content-text block" data-seccion="1">
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-1"><img src="imagenes/inversores-atados1.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-1">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-1" onclick="guardarProducto('producto-inversor-1')"><img src="imagenes/inversores-atados1.avif" alt=""></figure>
                 <h2>inversor trifasico,20kW, 280/220V</h2>
                 <h3>Q31,415.95</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-2"><img src="imagenes/inversores-atados2.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-2">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-2" onclick="guardarProducto('producto-inversor-2')"><img src="imagenes/inversores-atados2.avif" alt=""></figure>
                 <h2>Inversor monofasico, 6kW</h2>
                 <h3>Q11,371.87</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-3"><img src="imagenes/inversores-atados3.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-3">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-3" onclick="guardarProducto('producto-inversor-3')"><img src="imagenes/inversores-atados3.avif" alt=""></figure>
                 <h2>Inversor monofasico,5kW</h2>
                 <h3>Q10,048.03</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-4"><img src="imagenes/inversores-atados4.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-4">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-4" onclick="guardarProducto('producto-inversor-4')"><img src="imagenes/inversores-atados4.avif" alt=""></figure>
                 <h2>Inversor monofasico,4kW</h2>
                 <h3>Q9,629.92</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-5"><img src="imagenes/inversores-atados5.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-5">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-5" onclick="guardarProducto('producto-inversor-5')"><img src="imagenes/inversores-atados5.avif" alt=""></figure>
                 <h2>inversor monofasico, 3kW</h2>
                 <h3>Q8,038.96</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-6"><img src="imagenes/inversores-atados6.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-6">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-6" onclick="guardarProducto('producto-inversor-6')"><img src="imagenes/inversores-atados6.avif" alt=""></figure>
                 <h2>inversor monofasico, 2kW</h2>
                 <h3>Q6,866.01</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-7"><img src="imagenes/inversores-atados7.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-7">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-7" onclick="guardarProducto('producto-inversor-7')"><img src="imagenes/inversores-atados7.avif" alt=""></figure>
                 <h2>inversor fotovoltaico solis trifasico - 10kW</h2>
                 <h3>Q21,061.90</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-8"><img src="imagenes/inversores-atados10.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-8">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-8" onclick="guardarProducto('producto-inversor-8')"><img src="imagenes/inversores-atados10.avif" alt=""></figure>
                 <h2>Inversor Solar Atado a Red Solis 5kW</h2>
                 <h3>Q8,125.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-9"><img src="imagenes/inversores-atados10.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-9">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-9" onclick="guardarProducto('producto-inversor-9')"><img src="imagenes/inversores-atados10.avif" alt=""></figure>
                 <h2>inversor fotovoltaico solis trifasico - 10kW</h2>
                 <h3>Q19,337.25</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-10"><img src="imagenes/inversores-atados11.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-10">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-10" onclick="guardarProducto('producto-inversor-10')"><img src="imagenes/inversores-atados11.avif" alt=""></figure>
                 <h2>inversor solar atado a red solis 5kW (0------)</h2>
                 <h3>Q8,125.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-11"><img src="imagenes/inversores-atados12.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-11">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-11" onclick="guardarProducto('producto-inversor-11')"><img src="imagenes/inversores-atados12.avif" alt=""></figure>
                 <h2>inversor solar atado a red growatt 10kW</h2>
                 <h3>Q15,262.50</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-12"><img src="imagenes/inversores-atados13.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-12">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-12" onclick="guardarProducto('producto-inversor-12')"><img src="imagenes/inversores-atados13.avif" alt=""></figure>
                 <h2>inversor solar atado a red growatt 5kW</h2>
                 <h3>Q8,637.50</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-13"><img src="imagenes/inversores-atados14.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-13">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-13" onclick="guardarProducto('producto-inversor-13')"><img src="imagenes/inversores-atados14.avif" alt=""></figure>
                 <h2>inversor solar atado a red growatt 2,5kW</h2>
                 <h3>Q5,137.50</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-14"><img src="imagenes/inversores-atados15.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-14">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-14" onclick="guardarProducto('producto-inversor-14')"><img src="imagenes/inversores-atados15.avif" alt=""></figure>
                 <h2>inversor solar atado a red growatt 3kW</h2>
                 <h3>Q5,937.50</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-15"><img src="imagenes/inversores-atados16.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-15">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-15" onclick="guardarProducto('producto-inversor-15')"><img src="imagenes/inversores-atados16.avif" alt=""></figure>
                 <h2>inversor solar atado a red solis 2,5kW</h2>
                 <h3>Q5,737.50</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-16"><img src="imagenes/inversores-atados16.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-16">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-16" onclick="guardarProducto('producto-inversor-16')"><img src="imagenes/inversores-atados16.avif" alt=""></figure>
                 <h2>inversor solar atado a red solis 2,5kW REPETIDO</h2>
                 <h3>Q5,737.50</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-17"><img src="imagenes/inversores-atados8.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-17">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-17" onclick="guardarProducto('producto-inversor-17')"><img src="imagenes/inversores-atados8.avif" alt=""></figure>
                 <h2>Inversor Solar Atado a Red SMA 5KW</h2>
                 <h3>Q14.854,78</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-18"><img src="imagenes/inversores-atados8.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-18">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-18" onclick="guardarProducto('producto-inversor-18')"><img src="imagenes/inversores-atados8.avif" alt=""></figure>
                 <h2>inversor solar atado a red SMA 6KW</h2>
                 <h3>Q15,430.79</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-19"><img src="imagenes/inversores-canadian1.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-19">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-19" onclick="guardarProducto('producto-inversor-19')"><img src="imagenes/inversores-canadian1.avif" alt=""></figure>
                 <h2>inversor 20kW canadian solar atado a red</h2>
                 <h3>Q29,848.41</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-20"><img src="imagenes/inversores-canadian2.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-20">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-20" onclick="guardarProducto('producto-inversor-20')"><img src="imagenes/inversores-canadian2.avif" alt=""></figure>
                 <h2>inversor 9kW canadian solar atado a red</h2>
                 <h3>Q10,182.84</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="description-inversor.html#inversor-21"><img src="imagenes/inversores-canadian3.avif" alt=""></figure>
+            <article class="content-box" id="producto-inversor-21">
+                <figure><a class="link-box productoSeleccionado" href="description-inversor.html#inversor-21" onclick="guardarProducto('producto-inversor-21')"><img src="imagenes/inversores-canadian3.avif" alt=""></figure>
                 <h2>inversor 7kW canadian solar atado a red</h2>
                 <h3>Q9,533.54</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>

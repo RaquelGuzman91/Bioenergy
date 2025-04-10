@@ -105,39 +105,75 @@
             <a class="button-back" href="products.html">volver</a> <h2>categoria paneles solares</h2>
         </div>
         <!-- ------->
+
+
+        <!--------       ---------->
+        <script>
+            function guardarProducto(idProducto) {
+            localStorage.setItem('productoSeleccionado', idProducto); // Guarda el ID del producto.
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const id = localStorage.getItem('productoSeleccionado'); // Obtiene el ID guardado.
+            if (id) {
+                const elemento = document.getElementById(id); // Busca el elemento con el ID.
+                if (elemento) {
+                    // Opción 1: Scroll en toda la página
+                    const rect = elemento.getBoundingClientRect();
+                    const offsetTop = rect.top + window.pageYOffset;    
+                    window.scrollTo(0, offsetTop); // Desplazarse al elemento.
+
+                    // Opción 2: Scroll en un contenedor específico
+                    const contenedor = document.querySelector('.contenedor-scrollable');
+                    if (contenedor) {
+                        contenedor.scrollTop = elemento.offsetTop; // Desplaza dentro del contenedor.
+                    }
+
+                    // Estilo para destacar el elemento (opcional)
+                    elemento.style.backgroundColor = 'rgb(216, 235, 252)'; // Fondo celeste.
+                }
+            }
+            localStorage.removeItem('productoSeleccionado'); // Limpia el ID después de usarlo.
+        });
+
+           
+    </script>
+        <!-------------------     --------------->
+
+
         <div class="content-text block" data-seccion="1">
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-paneles.html#panel-1"><img src="imagenes/panel1.avif" alt=""></figure>
+            <article class="content-box" id="producto-panel-1">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-paneles.html#panel-1" onclick="guardarProducto('producto-panel-1')"><img src="imagenes/panel1.avif" alt=""></figure>
                 <h2>panel solar 240W</h2>
                 <h3>Q781.25</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-paneles.html#panel-2"><img src="imagenes/panel2.avif" alt=""></figure>
+            <article class="content-box" id="producto-panel-2">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-paneles.html#panel-2" onclick="guardarProducto('producto-panel-2')"><img src="imagenes/panel2.avif" alt=""></figure>
                 <h2>panel solar 360W</h2>
                 <h3>Q1,150.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-paneles.html#panel-3"><img src="imagenes/panel3.avif" alt=""></figure>
+            <article class="content-box" id="producto-panel-3">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-paneles.html#panel-3" onclick="guardarProducto('producto-panel-3')"><img src="imagenes/panel3.avif" alt=""></figure>
                 <h2>Panel solar 450W</h2>
                 <h3>Q1,462.50</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-paneles.html#panel-4"><img src="imagenes/panel4.avif" alt=""></figure>
+            <article class="content-box" id="producto-panel-4">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-paneles.html#panel-4" onclick="guardarProducto('producto-panel-4')"><img src="imagenes/panel4.avif" alt=""></figure>
                 <h2>Panel solar 540W</h2>
                 <h3>Q1,687.50</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-paneles.html#panel-5"><img src="imagenes/panel4.avif" alt=""></figure>
+            <article class="content-box" id="producto-panel-5">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-paneles.html#panel-5" onclick="guardarProducto('producto-panel-5')"><img src="imagenes/panel4.avif" alt=""></figure>
                 <h2>Panel solar 540W</h2>
                 <h3>Q1,687.50</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-paneles.html#panel-6"><img src="imagenes/panel4.avif" alt=""></figure>
+            <article class="content-box" id="producto-panel-6">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-paneles.html#panel-6" onclick="guardarProducto('producto-panel-6')"><img src="imagenes/panel4.avif" alt=""></figure>
                 <h2>Panel solar 540W</h2>
                 <h3>Q1,687.50</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>

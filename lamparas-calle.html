@@ -104,22 +104,57 @@
         <div class="card-enlaces">
             <a class="button-back" href="products.html">volver</a> <h2>categoria lamparas</h2>
         </div>
-        <!-- ------->
+        
+
+        <!--------       ---------->
+        <script>
+            function guardarProducto(idProducto) {
+            localStorage.setItem('productoSeleccionado', idProducto); // Guarda el ID del producto.
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const id = localStorage.getItem('productoSeleccionado'); // Obtiene el ID guardado.
+            if (id) {
+                const elemento = document.getElementById(id); // Busca el elemento con el ID.
+                if (elemento) {
+                    // Opción 1: Scroll en toda la página
+                    const rect = elemento.getBoundingClientRect();
+                    const offsetTop = rect.top + window.pageYOffset;    
+                    window.scrollTo(0, offsetTop); // Desplazarse al elemento.
+
+                    // Opción 2: Scroll en un contenedor específico
+                    const contenedor = document.querySelector('.contenedor-scrollable');
+                    if (contenedor) {
+                        contenedor.scrollTop = elemento.offsetTop; // Desplaza dentro del contenedor.
+                    }
+
+                    // Estilo para destacar el elemento (opcional)
+                    elemento.style.backgroundColor = 'rgb(216, 235, 252)'; // Fondo celeste.
+                }
+            }
+            localStorage.removeItem('productoSeleccionado'); // Limpia el ID después de usarlo.
+        });
+
+        
+        </script>
+        <!-------------------     --------------->
+
+
         <div class="content-text block" data-seccion="1">
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-lamparas-experiores.html#lampara-1"><img src="imagenes/lampara-solar1.webp" alt=""></figure>
+            <article class="content-box" id="producto-lampara-1">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-lamparas-experiores.html#lampara-1" onclick="guardarProducto('producto-lampara-1')"><img src="imagenes/lampara-solar1.webp" alt=""></figure>
                 <h2>lampara de calle de 30W</h2>
                 <h3>Q700.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-lamparas-experiores.html#lampara-2"><img src="imagenes/lampara-solar2.jpg" alt=""></figure>
+            <article class="content-box" id="producto-lampara-2">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-lamparas-experiores.html#lampara-2" onclick="guardarProducto('producto-lampara-2')"><img src="imagenes/lampara-solar2.jpg" alt=""></figure>
                 <h2>lampara de calle de 50W</h2>
                 <h3>Q980.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-lamparas-experiores.html#lampara-3"><img src="imagenes/alumbrado-led-the-day1.png" alt=""></figure>
+            <article class="content-box" id="producto-lampara-3">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-lamparas-experiores.html#lampara-3" onclick="guardarProducto('producto-lampara-3')"><img src="imagenes/alumbrado-led-the-day1.png" alt=""></figure>
                 <h2>alumbrado led 3000 WATTS</h2>
                 <h3>Q520.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>

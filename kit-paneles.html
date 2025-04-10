@@ -104,76 +104,111 @@
         <div class="card-enlaces">
             <a class="button-back" href="products.html">volver</a> <h2>categoria kit-paneles</h2>
         </div>
-        <!-- ------->
+        
+
+         <!--------       ---------->
+        <script>
+            function guardarProducto(idProducto) {
+            localStorage.setItem('productoSeleccionado', idProducto); // Guarda el ID del producto.
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const id = localStorage.getItem('productoSeleccionado'); // Obtiene el ID guardado.
+            if (id) {
+                const elemento = document.getElementById(id); // Busca el elemento con el ID.
+                if (elemento) {
+                    // Opción 1: Scroll en toda la página
+                    const rect = elemento.getBoundingClientRect();
+                    const offsetTop = rect.top + window.pageYOffset;    
+                    window.scrollTo(0, offsetTop); // Desplazarse al elemento.
+
+                    // Opción 2: Scroll en un contenedor específico
+                    const contenedor = document.querySelector('.contenedor-scrollable');
+                    if (contenedor) {
+                        contenedor.scrollTop = elemento.offsetTop; // Desplaza dentro del contenedor.
+                    }
+
+                    // Estilo para destacar el elemento (opcional)
+                    elemento.style.backgroundColor = 'rgb(216, 235, 252)'; // Fondo celeste.
+                }
+            }
+            localStorage.removeItem('productoSeleccionado'); // Limpia el ID después de usarlo.
+        });
+
+           
+    </script>
+        <!-------------------     --------------->
+
+
         <div class="content-text block" data-seccion="1">
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-kit-paneles.html#kit-1"><img src="imagenes/kit-solar-300w-uso-diario-iluminacion-con-inversor-onda-modificada.png" alt=""></figure>
+            <article class="content-box" id="producto-kit-1">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-kit-paneles.html#kit-1" onclick="guardarProducto('producto-kit-1')"><img src="imagenes/kit-solar-300w-uso-diario-iluminacion-con-inversor-onda-modificada.png" alt=""></figure>
                 <h2>controlador Powmr 100A MPPT</h2>
                 <h3>Q3,255.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-kit-paneles.html#kit-2"><img src="imagenes/kit-portatil-solar2.png" alt=""></figure>
+            <article class="content-box" id="producto-kit-2">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-kit-paneles.html#kit-2" onclick="guardarProducto('producto-kit-2')"><img src="imagenes/kit-portatil-solar2.png" alt=""></figure>
                 <h2>generador solar portatil 10w, energía para Exteriores</h2>
                 <h3>Q1,743.75</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-kit-paneles.html#kit-3"><img src="imagenes/kit-portatil-solar3.webp" alt=""></figure>
+            <article class="content-box" id="producto-kit-3">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-kit-paneles.html#kit-3" onclick="guardarProducto('producto-kit-3')"><img src="imagenes/kit-portatil-solar3.webp" alt=""></figure>
                 <h2>generador solar portatil 6v/10 6-9hrs</h2>
                 <h3>Q5,572</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-kit-paneles.html#kit-4"><img src="imagenes/kit-portatil-solar4.webp" alt=""></figure>
+            <article class="content-box" id="producto-kit-4">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-kit-paneles.html#kit-4" onclick="guardarProducto('producto-kit-4')"><img src="imagenes/kit-portatil-solar4.webp" alt=""></figure>
                 <h2>generador solar portátil, incluye radio MP3 & FM...</h2>
                 <h3>Q1,453.13</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-kit-paneles.html#kit-5"><img src="imagenes/kit-portatil-solar5.webp" alt=""></figure>
+            <article class="content-box" id="producto-kit-5">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-kit-paneles.html#kit-5" onclick="guardarProducto('producto-kit-5')"><img src="imagenes/kit-portatil-solar5.webp" alt=""></figure>
                 <h2>Sistema de Iluminación Solar Tipo Reflector, GD-11</h2>
                 <h3>Q288.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-kit-paneles.html#kit-6"><img src="imagenes/lampara-solar.png" alt=""></figure>
+            <article class="content-box" id="producto-kit-6">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-kit-paneles.html#kit-6" onclick="guardarProducto('producto-kit-6')"><img src="imagenes/lampara-solar.png" alt=""></figure>
                 <h2>Controlador Helios 20A mppt</h2>
                 <h3>Q871.88</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-kit-paneles.html#kit-7"><img src="imagenes/kit-solar-yupi1.png" alt=""></figure>
+            <article class="content-box" id="producto-kit-7">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-kit-paneles.html#kit-7" onclick="guardarProducto('producto-kit-7')"><img src="imagenes/kit-solar-yupi1.png" alt=""></figure>
                 <h2>kit solar 1 panel de 100WATTS - inversor 300W - controlador de 10 amperios</h2>
                 <h3>Q1,199.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-kit-paneles.html#kit-8"><img src="imagenes/Kitsolar200watts.png" alt=""></figure>
+            <article class="content-box" id="producto-kit-8">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-kit-paneles.html#kit-8" onclick="guardarProducto('producto-kit-8')"><img src="imagenes/Kitsolar200watts.png" alt=""></figure>
                 <h2>kit solar 1 panel de 200WATTS - inversor 600 - controlador 20 amperios</h2>
                 <h3>Q1,999.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-kit-paneles.html#kit-9"><img src="imagenes/kit-solar-yupi2-300wts.png" alt=""></figure>
+            <article class="content-box" id="producto-kit-9">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-kit-paneles.html#kit-9" onclick="guardarProducto('producto-kit-9')"><img src="imagenes/kit-solar-yupi2-300wts.png" alt=""></figure>
                 <h2>kit solar 1 panel de 300WATTS - inversor 1200 - controlador 20 amperios</h2>
                 <h3>Q3,299.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-kit-paneles.html#kit-10"><img src="imagenes/kit-solar-yupi2-550wts.png" alt=""></figure>
+            <article class="content-box" id="producto-kit-10">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-kit-paneles.html#kit-10" onclick="guardarProducto('producto-kit-10')"><img src="imagenes/kit-solar-yupi2-550wts.png" alt=""></figure>
                 <h2>kit solar 1 panel de 550WATTS - inversor 1200W - controlador 60 amperios</h2>
                 <h3>Q5,399.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-kit-paneles.html#kit-11"><img src="imagenes/Kit_solar_1100_watts.png" alt=""></figure>
+            <article class="content-box" id="producto-kit-11">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-kit-paneles.html#kit-11" onclick="guardarProducto('producto-kit-11')"><img src="imagenes/Kit_solar_1100_watts.png" alt=""></figure>
                 <h2>kit 2 paneles solares 550WATTS - inversor 2000W - controlador 50 amperios</h2>
                 <h3>Q11,699.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-kit-paneles.html#kit-12"><img src="imagenes/kit-portatil-solar6.webp" alt=""></figure>
+            <article class="content-box" id="producto-kit-12">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-kit-paneles.html#kit-12" onclick="guardarProducto('producto-kit-12')"><img src="imagenes/kit-portatil-solar6.webp" alt=""></figure>
                 <h2>Controlador PWM MUST 80 [A]</h2>
                 <h3>Q946.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>

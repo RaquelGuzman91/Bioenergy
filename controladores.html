@@ -102,96 +102,133 @@
     <!--  SECTION BANNER CARD    -->
     <section class="section-card">
         <div class="card-enlaces">
-            <a class="button-back" href="products.html">volver</a> <h2>categoria de controladores</h2>
+            <a id="button-back" class="button-back" href="products.html">volver</a> <h2>categoria de controladores</h2>
         </div>
-        <!-- ------->
+
+        <!------------------ ------->
+        <script>
+            function guardarProducto(idProducto) {
+            localStorage.setItem('productoSeleccionado', idProducto); // Guarda el ID del producto.
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const id = localStorage.getItem('productoSeleccionado'); // Obtiene el ID guardado.
+            if (id) {
+                const elemento = document.getElementById(id); // Busca el elemento con el ID.
+                if (elemento) {
+                    // Opción 1: Scroll en toda la página
+                    const rect = elemento.getBoundingClientRect();
+                    const offsetTop = rect.top + window.pageYOffset;    
+                    window.scrollTo(0, offsetTop); // Desplazarse al elemento.
+
+                    // Opción 2: Scroll en un contenedor específico
+                    const contenedor = document.querySelector('.contenedor-scrollable');
+                    if (contenedor) {
+                        contenedor.scrollTop = elemento.offsetTop; // Desplaza dentro del contenedor.
+                    }
+
+                    // Estilo para destacar el elemento (opcional)
+                    elemento.style.backgroundColor = 'rgb(216, 235, 252)'; // Fondo celeste.
+                }
+            }
+            localStorage.removeItem('productoSeleccionado'); // Limpia el ID después de usarlo.
+        });
+
+           
+    </script>
+        <!-------------------     --------------->
+        <!-------------------     --------------->
+
+
+        
+        <!---------     --------->
         <div class="content-text block" data-seccion="1">
-            <article class="content-box">
-                <figure><a class="link-box" href="decription-controladores.html#controlador-1"><img src="imagenes/controlador1.avif" alt=""></figure>
+            <article class="content-box" id="producto-controlador-1">
+                <figure><a class="link-box productoSeleccionado" href="decription-controladores.html#controlador-1" onclick="guardarProducto('producto-controlador-1')"><img src="imagenes/controlador1.avif" alt=""></figure>
                 <h2>Controlador Helios 20A PWM</h2>
                 <h3>Q232.50</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="decription-controladores.html#controlador-2"><img src="imagenes/controlador2.avif" alt=""></figure>
+            <article class="content-box" id="producto-controlador-2">
+                <figure><a class="link-box productoSeleccionado" href="decription-controladores.html#controlador-2" onclick="guardarProducto('producto-controlador-2')"><img src="imagenes/controlador2.avif" alt=""></figure>
                 <h2>Controlador Helios 10A PWM</h2>
                 <h3>168.56</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="decription-controladores.html#controlador-3"><img src="imagenes/controlador3.avif" alt=""></figure>
+            <article class="content-box" id="producto-controlador-3">
+                <figure><a class="link-box productoSeleccionado" href="decription-controladores.html#controlador-3" onclick="guardarProducto('producto-controlador-3')"><img src="imagenes/controlador3.avif" alt=""></figure>
                 <h2>controlador Powmr 100A MPPT</h2>
                 <h3>Q3,255.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="decription-controladores.html#controlador-4"><img src="imagenes/controlador4.avif" alt=""></figure>
+            <article class="content-box" id="producto-controlador-4">
+                <figure><a class="link-box productoSeleccionado" href="decription-controladores.html#controlador-4" onclick="guardarProducto('producto-controlador-4')"><img src="imagenes/controlador4.avif" alt=""></figure>
                 <h2>Controlador Powmr 60A MPPT</h2>
                 <h3>Q1,743.75</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="decription-controladores.html#controlador-5"><img src="imagenes/controlador5.avif" alt=""></figure>
+            <article class="content-box" id="producto-controlador-5">
+                <figure><a class="link-box productoSeleccionado" href="decription-controladores.html#controlador-5" onclick="guardarProducto('producto-controlador-5')"><img src="imagenes/controlador5.avif" alt=""></figure>
                 <h2>Controlador Powmr 40A MPPT</h2>
                 <h3>Q1,272.94</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="decription-controladores.html#controlador-6"><img src="imagenes/controlador6.avif" alt=""></figure>
+            <article class="content-box" id="producto-controlador-6">
+                <figure><a class="link-box productoSeleccionado" href="decription-controladores.html#controlador-6" onclick="guardarProducto('producto-controlador-6')"><img src="imagenes/controlador6.avif" alt=""></figure>
                 <h2>Controlador Helios 40A MPPT</h2>
                 <h3>Q1,453.13</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="decription-controladores.html#controlador-7"><img src="imagenes/controlador7.avif" alt=""></figure>
+            <article class="content-box" id="producto-controlador-7">
+                <figure><a class="link-box productoSeleccionado" href="decription-controladores.html#controlador-7" onclick="guardarProducto('producto-controlador-7')"><img src="imagenes/controlador7.avif" alt=""></figure>
                 <h2>Controlador Helios 30A MPPT</h2>
                 <h3>Q1,220.63</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="decription-controladores.html#controlador-8"><img src="imagenes/controlador8.avif" alt=""></figure>
+            <article class="content-box" id="producto-controlador-8">
+                <figure><a class="link-box productoSeleccionado" href="decription-controladores.html#controlador-8" onclick="guardarProducto('producto-controlador-8')"><img src="imagenes/controlador8.avif" alt=""></figure>
                 <h2>Controlador Helios 20A mppt</h2>
                 <h3>Q871.88</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="decription-controladores.html#controlador-9"><img src="imagenes/controlador9.avif" alt=""></figure>
+            <article class="content-box" id="producto-controlador-9">
+                <figure><a class="link-box productoSeleccionado" href="decription-controladores.html#controlador-9" onclick="guardarProducto('producto-controlador-9')"><img src="imagenes/controlador9.avif" alt=""></figure>
                 <h2>Controlador PWM MUST 10 [A]</h2>
                 <h3>agotado</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="decription-controladores.html#controlador-10"><img src="imagenes/controlador10.avif" alt=""></figure>
+            <article class="content-box" id="producto-controlador-10">
+                <figure><a class="link-box productoSeleccionado" href="decription-controladores.html#controlador-10" onclick="guardarProducto('producto-controlador-10')"><img src="imagenes/controlador10.avif" alt=""></figure>
                 <h2>controlador PWM MUST 30 [A]</h2>
                 <h3>Q171.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="decription-controladores.html#controlador-11"><img src="imagenes/controlador11.avif" alt=""></figure>
+            <article class="content-box" id="producto-controlador-11">
+                <figure><a class="link-box productoSeleccionado" href="decription-controladores.html#controlador-11" onclick="guardarProducto('producto-controlador-11')"><img src="imagenes/controlador11.avif" alt=""></figure>
                 <h2>Controlador PWM MUST 50 [A]</h2>
                 <h3>Q650.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="decription-controladores.html#controlador-12"><img src="imagenes/controlador12.avif" alt=""></figure>
+            <article class="content-box" id="producto-controlador-12">
+                <figure><a class="link-box productoSeleccionado" href="decription-controladores.html#controlador-12" onclick="guardarProducto('producto-controlador-12')"><img src="imagenes/controlador12.avif" alt=""></figure>
                 <h2>Controlador PWM MUST 60 [A]</h2>
                 <h3>Q593.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="decription-controladores.html#controlador-13"><img src="imagenes/controlador13.avif" alt=""></figure>
+            <article class="content-box" id="producto-controlador-13">
+                <figure><a class="link-box productoSeleccionado" href="decription-controladores.html#controlador-13" onclick="guardarProducto('producto-controlador-13')"><img src="imagenes/controlador13.avif" alt=""></figure>
                 <h2>Controlador PWM MUST 80 [A]</h2>
                 <h3>Q946.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="decription-controladores.html#controlador-14"><img src="imagenes/controlador14.avif" alt=""></figure>
+            <article class="content-box" id="producto-controlador-14">
+                <figure><a class="link-box productoSeleccionado" href="decription-controladores.html#controlador-14" onclick="guardarProducto('producto-controlador-14')"><img src="imagenes/controlador14.avif" alt=""></figure>
                 <h2>Controlador PWM MUST 80 [A]</h2>
                 <h3>Q2,665.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="decription-controladores.html#controlador-15"><img src="imagenes/controlador15.avif" alt=""></figure>
+            <article class="content-box" id="producto-controlador-15">
+                <figure><a class="link-box productoSeleccionado" href="decription-controladores.html#controlador-15" onclick="guardarProducto('producto-controlador-15')"><img src="imagenes/controlador15.avif" alt=""></figure>
                 <h2>Controlador PWM MUST 100 [A]</h2>
                 <h3>Q3,130.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>

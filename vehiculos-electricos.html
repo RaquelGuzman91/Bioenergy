@@ -104,22 +104,57 @@
         <div class="card-enlaces">
             <a class="button-back" href="products.html">volver</a> <h2>categoria vehiculos</h2>
         </div>
-        <!-- ------->
+        
+
+        <!--------       ---------->
+        <script>
+            function guardarProducto(idProducto) {
+            localStorage.setItem('productoSeleccionado', idProducto); // Guarda el ID del producto.
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const id = localStorage.getItem('productoSeleccionado'); // Obtiene el ID guardado.
+            if (id) {
+                const elemento = document.getElementById(id); // Busca el elemento con el ID.
+                if (elemento) {
+                    // Opción 1: Scroll en toda la página
+                    const rect = elemento.getBoundingClientRect();
+                    const offsetTop = rect.top + window.pageYOffset;    
+                    window.scrollTo(0, offsetTop); // Desplazarse al elemento.
+
+                    // Opción 2: Scroll en un contenedor específico
+                    const contenedor = document.querySelector('.contenedor-scrollable');
+                    if (contenedor) {
+                        contenedor.scrollTop = elemento.offsetTop; // Desplaza dentro del contenedor.
+                    }
+
+                    // Estilo para destacar el elemento (opcional)
+                    elemento.style.backgroundColor = 'rgb(216, 235, 252)'; // Fondo celeste.
+                }
+            }
+            localStorage.removeItem('productoSeleccionado'); // Limpia el ID después de usarlo.
+        });
+
+           
+    </script>
+    <!-------------------     --------------->
+
+
         <div class="content-text block" data-seccion="1">
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-vehiculos.html#vehiculo-1"><img src="imagenes/vehiculos1.avif" alt=""></figure>
+            <article class="content-box" id="producto-vehiculos-1">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-vehiculos.html#vehiculo-1" onclick="guardarProducto('producto-vehiculos-1')"><img src="imagenes/vehiculos1.avif" alt=""></figure>
                 <h2>bicicleta eléctrica urbana eBike 250W Gris matte</h2>
                 <h3>Q9,499.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-vehiculos.html#vehiculo-2"><img src="imagenes/vehiculos2.avif" alt=""></figure>
+            <article class="content-box"id="producto-vehiculos-2">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-vehiculos.html#vehiculo-2" onclick="guardarProducto('producto-vehiculos-2')"><img src="imagenes/vehiculos2.avif" alt=""></figure>
                 <h2>motocicleta eléctrica N5 3000W Negro</h2>
                 <h3>Q26,799.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-vehiculos.html#vehiculo-3"><img src="imagenes/vehiculos2.avif" alt=""></figure>
+            <article class="content-box" id="producto-vehiculos-3">
+                <figure><a class="link-box productoSeleccionado" href="descripcion-vehiculos.html#vehiculo-3" onclick="guardarProducto('producto-vehiculos-3')"><img src="imagenes/vehiculos2.avif" alt=""></figure>
                 <h2>motocicleta eléctrica N5 3000W Negro</h2>
                 <h3>Q26,799.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>

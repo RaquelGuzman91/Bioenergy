@@ -98,7 +98,6 @@
         </article>
     </section>
 
-    
 
 
     <!--  SECTION BANNER CARD    -->
@@ -106,46 +105,94 @@
         <div class="card-enlaces">
             <a class="button-back" href="products.html">volver</a> <h2>categoria bombas</h2>
         </div>
-        <!-- ------->
+
+
+        <script>
+                     function guardarProducto(idProducto) {
+    localStorage.setItem('productoSeleccionado', idProducto); // Guarda el ID del producto.
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const id = localStorage.getItem('productoSeleccionado'); // Obtiene el ID guardado.
+    if (id) {
+        const elemento = document.getElementById(id); // Busca el elemento con el ID.
+        if (elemento) {
+            // Opción 1: Scroll en toda la página
+            const rect = elemento.getBoundingClientRect();
+            const offsetTop = rect.top + window.pageYOffset;
+            window.scrollTo(0, offsetTop); // Desplazarse al elemento.
+
+            // Opción 2: Scroll en un contenedor específico
+            const contenedor = document.querySelector('.contenedor-scrollable');
+            if (contenedor) {
+                contenedor.scrollTop = elemento.offsetTop; // Desplaza dentro del contenedor.
+            }
+
+            // Estilo para destacar el elemento (opcional)
+            elemento.style.backgroundColor = 'rgb(216, 235, 252)'; // Fondo celeste.
+        }
+    }
+    localStorage.removeItem('productoSeleccionado'); // Limpia el ID después de usarlo.
+});
+
+           
+    </script>
+        
+        
+        
         <div class="content-text block" data-seccion="1">
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-bombas.html#bomba-1"><img src="imagenes/bomba-solar1.avif" alt=""></figure>
+            <article class="content-box" id="producto-bomba-1">
+                <figure><a class="link-box bomba productoSeleccionado" href="descripcion-bombas.html#bomba-1" onclick="guardarProducto('producto-bomba-1')"><img src="imagenes/bomba-solar1.avif" alt=""></figure>
                 <h2>bomba solar DILFULL 3DSS1.7-109-48-500</h2>
                 <h3>Q4,916.25</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-bombas.html#bomba-2"><img src="imagenes/bomba-solar1.avif" alt=""></figure>
+            <article class="content-box" id="producto-bomba-2">
+                <figure><a class="link-box bomba productoSeleccionado" href="descripcion-bombas.html#bomba-2" onclick="guardarProducto('producto-bomba-2')"><img src="imagenes/bomba-solar1.avif" alt=""></figure>
                 <h2>bomba solar DILFULL 3DSS2.0-150-72-750</h2>
                 <h3>Q3,177.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-bombas.html#bomba-3"><img src="imagenes/bomba-solar1.avif" alt=""></figure>
+            <article class="content-box" id="producto-bomba-3">
+                <figure><a class="link-box bomba productoSeleccionado" href="descripcion-bombas.html#bomba-3" onclick="guardarProducto('producto-bomba-3')"><img src="imagenes/bomba-solar1.avif" alt=""></figure>
                 <h2>bomba solar DILFULL 3DSS2.2-180-72-1100</h2>
                 <h3>Q3,200.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-bombas.html#bomba-4"><img src="imagenes/bomba-solar1.avif" alt=""></figure>
+            <article class="content-box" id="producto-bomba-4">
+                <figure><a class="link-box bomba productoSeleccionado" href="descripcion-bombas.html#bomba-4" onclick="guardarProducto('producto-bomba-4')"><img src="imagenes/bomba-solar1.avif" alt=""></figure>
                 <h2>bomba solar DILFULL 3DPC3.5-80-72-600</h2>
                 <h3>Q4,588.50</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-bombas.html#bomba-5"><img src="imagenes/bomba-solar1.avif" alt=""></figure>
+            <article class="content-box" id="producto-bomba-5">
+                <figure><a class="link-box bomba productoSeleccionado" href="descripcion-bombas.html#bomba-5" onclick="guardarProducto('producto-bomba-5')"><img src="imagenes/bomba-solar1.avif" alt=""></figure>
                 <h2>bomba solar superficial DILFULL DCPM36-19-200-2500-A/D</h2>
                 <h3>Q4,575.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
-            <article class="content-box">
-                <figure><a class="link-box" href="descripcion-bombas.html#bomba-6"><img src="imagenes/Bomba Solar Superficial DIFULL-2.avif" alt=""></figure>
+            <article class="content-box " id="producto-bomba-6">
+                <figure><a class="link-box bomba bomba-6 productoSeleccionado" href="descripcion-bombas.html#bomba-6" onclick="guardarProducto('producto-bomba-6')"><img src="imagenes/Bomba Solar Superficial DIFULL-2.avif" alt=""></figure>
                 <h2>bomba solar superficial DILFULL DQB2-25-24-210</h2>
                 <h3>Q2,114.00</h3></a>
                 <a class="button-buys" href="#"><i class="bi bi-cart3"></i>comprar</a>
             </article>
         </div>
     </section>
+
+    <!-- 
+        <article id="producto1">
+    <img src="imagen1.jpg" alt="Producto 1">
+    <h2>Producto 1</h2>
+    <a href="descripcion.html" onclick="guardarProducto('producto1')">Ver descripción</a>
+</article>
+
+<article id="producto2">
+    <img src="imagen2.jpg" alt="Producto 2">
+    <h2>Producto 2</h2>
+    <a href="descripcion.html" onclick="guardarProducto('producto2')">Ver descripción</a>
+</article>
+    -->
 
     <!--   SECTION BANNER US-->
     <section class="section-us">
