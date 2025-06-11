@@ -370,9 +370,9 @@ header .top-nav{
 .section-us .container-us .us-img{
   flex: 1 1 25rem;
   width: 100%;
-  height: auto;
-  padding: 2rem;
+  height: 300px;
 }
+
 .section-us .container-us figure img{
   width: 100%;
   height: 100%;

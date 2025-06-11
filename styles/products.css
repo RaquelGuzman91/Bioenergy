@@ -312,6 +312,7 @@ header .top-nav{
 .section-us .container-us figure img{
   width: 100%;
   height: 100%;
+  background-color: white;
 }
 .section-us .container-us .us-text h2{
   font-family: "Roboto", sans-serif;

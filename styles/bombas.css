@@ -65,10 +65,12 @@ body{
 .container-attention h1{
   font-weight: 400;
   font-size: clamp(9px, 1vw, 16px);/*---------------*/
+  color: rgb(148, 148, 148);
 }
 .section-info .container-info i,
 .section-info .container-attention i{
   padding-right: 1rem;
+  color: rgb(148, 148, 148);
 }
 .section-info .container-attention{
   display: flex;
@@ -109,7 +111,6 @@ header .container-header{
   border: 1.5px solid rgb(192, 192, 192);
   border-radius: 70px;
   padding: .5rem 2rem;
-
 }
 header .img-logo{
   width: 200px;
@@ -721,7 +722,9 @@ footer .contact-icons .icons-networks i{
   text-decoration: none;
   padding-left: 3rem;
 }
-
+.section-copy button i{
+  color: black;
+}
  .section-copy #ir_arriba_boton button{
   position: fixed;
   bottom: 2rem;
